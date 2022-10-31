@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
-import { DetailUserService } from '../../services/user/DetailUserService';
+import { DetailUserService } from '../services/DetailUserService';
 
 class DetailUserController {
   async handle(req: Request, res: Response) {
-    const user_id = req.user_id;
+    const user_id = req.body;
 
     const detailUserService = new DetailUserService();
 

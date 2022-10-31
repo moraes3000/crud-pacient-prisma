@@ -1,7 +1,12 @@
-import prismaClient from "../../prisma";
+import prismaClient from "../../../prisma";
+
+interface IUserDetail {
+  user_id: string
+}
 
 class DetailUserService {
-  async execute(user_id: string) {
+  async execute({ user_id }: IUserDetail) {
+
 
     const user = await prismaClient.user.findFirst({
       where: {

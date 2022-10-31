@@ -8,20 +8,22 @@ import { ListPacientesController } from './controllers/paciente/ListPacienteCont
 import { RemovePacienteController } from './controllers/paciente/RemovePacienteController';
 import { EditPacienteController } from './controllers/paciente/UpdatePacienteController';
 
-import { AuthUserController } from './controllers/user/AuthUserController';
-import { CreateUserController } from './controllers/user/CreateUserController';
-import { DetailUserController } from './controllers/user/DetailUserController';
+
+
+import { DetailUserController } from './modules/user/controllers/DetailUserController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
+import usersRouter from './modules/user/routes/users.routes';
 
 
 const router = Router();
 
 
 //user
-router.post('/users', new CreateUserController().handle);
-router.post('/session', new AuthUserController().handle);
-router.get('/me', new DetailUserController().handle);
+// router.post('/users', new CreateUserController().handle);
+router.use('/users', usersRouter);
+// router.post('/session', new AuthUserController().handle);
+// router.get('/me', new DetailUserController().handle);
 
 // paciente
 router.post('/pacientes', new CreatePacienteController().handler);
