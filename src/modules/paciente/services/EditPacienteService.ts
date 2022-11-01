@@ -1,5 +1,4 @@
-import prismaClient from "../../prisma";
-
+import prismaClient from "../../../prisma";
 interface PacienteProps {
   name: string;
   paciente_id: string;

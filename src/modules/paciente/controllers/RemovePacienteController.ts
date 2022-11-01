@@ -1,11 +1,11 @@
 import { Request, Response } from 'express'
+import { RemovePacienteService } from '../services/RemovePacienteService';
 
 
-import { RemovePacienteService } from "../../services/paciente/RemovePacienteService"
 
 class RemovePacienteController {
-  async handle(req: Request, res: Response) {
-    const item_id = req.query.item_id as string;
+  async execute(req: Request, res: Response) {
+    const item_id = req.params.id
 
     const removeConsultaService = new RemovePacienteService()
 

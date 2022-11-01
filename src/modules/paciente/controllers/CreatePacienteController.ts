@@ -1,9 +1,10 @@
 import { Request, Response } from 'express'
-import { CreatePacienteService } from '../../services/paciente/CreatePacienteService'
+import { CreatePacienteService } from '../services/CreatePacienteService'
+
 
 
 class CreatePacienteController {
-  async handler(req: Request, res: Response) {
+  async execute(req: Request, res: Response) {
     const { name } = req.body
 
     const createPacienteService = new CreatePacienteService()

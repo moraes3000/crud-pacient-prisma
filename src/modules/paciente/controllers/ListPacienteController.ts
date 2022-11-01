@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { ListPacientesService } from "../../services/paciente/ListPacienteService";
+import { ListPacientesService } from "../services/ListPacienteService";
 
 class ListPacientesController {
-  async handle(req: Request, res: Response) {
+  async execute(req: Request, res: Response) {
     const listarPacientesService = new ListPacientesService()
 
     const pacientes = await listarPacientesService.execute()

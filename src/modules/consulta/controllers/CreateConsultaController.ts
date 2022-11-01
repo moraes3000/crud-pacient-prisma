@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { CreateConsultaService } from "../../services/consulta/CreateConsultaService";
+import { CreateConsultaService } from "../services/CreateConsultaService";
 
 class CreateConsultaController {
-  async handle(req: Request, res: Response) {
+  async execute(req: Request, res: Response) {
     const { description, paciente_id } = req.body;
 
 

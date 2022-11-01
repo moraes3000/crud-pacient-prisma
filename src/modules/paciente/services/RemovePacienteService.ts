@@ -1,10 +1,8 @@
-import prismaClient from "../../prisma";
-
+import prismaClient from "../../../prisma";
 
 interface Props {
   item_id: string;
 }
-
 
 class RemovePacienteService {
   async execute({ item_id }: Props) {

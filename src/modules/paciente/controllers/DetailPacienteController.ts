@@ -1,8 +1,9 @@
 import { Request, Response } from 'express'
-import { DetailPacientService } from '../../services/paciente/DetailPacienteService';
+import { DetailPacientService } from '../services/DetailPacienteService';
+
 
 class DetailPacientController {
-  async handle(req: Request, res: Response) {
+  async execute(req: Request, res: Response) {
     const paciente_id = req.query.paciente_id as string;
     console.log(paciente_id)
 
