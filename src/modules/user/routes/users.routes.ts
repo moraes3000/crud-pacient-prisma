@@ -18,7 +18,7 @@ const removeUserController = new RemoveUserController();
 
 usersRouter.get('/', isAuthenticated, listUserController.handle);
 usersRouter.post('/', usersController.handle);
-usersRouter.post('/session', isAuthenticated, authUserController.handle);
+usersRouter.post('/session', authUserController.handle);
 usersRouter.get('/me', isAuthenticated, detailUserController.handle);
 usersRouter.put('/', isAuthenticated, updateUserController.handle);
 usersRouter.delete('/:id', isAuthenticated, removeUserController.handle);
