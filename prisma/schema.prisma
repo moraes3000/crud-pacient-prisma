@@ -24,6 +24,7 @@ model User {
   name       String
   email      String
   password   String
+  avatar     String?
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
 
@@ -54,4 +55,16 @@ model Consult {
   paciente_id String?
 
   @@map("consulta")
+}
+
+model Product {
+  id          String    @id @default(uuid())
+  name        String
+  price       String
+  description String
+  banner      String
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
+
+  @@map("products")
 }

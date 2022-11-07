@@ -13,10 +13,19 @@ app.use(cors());
 app.use(router);
 
 // pegar pasta local
+import uploadConfig from './config/upload'
+import multer from 'multer';
+import { isAuthenticated } from './middlewares/isAuthenticated';
+import { CreateProductController } from './modules/product/controller/CreateProductController';
+
+const upload = multer(uploadConfig.upload('./tmp'))
+
 app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'tmp'))
 )
+
+router.post('/product', isAuthenticated, upload.single('avatar'), new CreateProductController().handle);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   if (err instanceof Error) {
